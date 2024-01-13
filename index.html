@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-2024</title>
+</head>
+<body>
+    <h1>Q. Write a function called byteSize that takes a string as input and returns the size of the string in bytes. The function should work for both ASCII and non-ASCII characters. </h1>
+    <br/>
+    <input type="text" id="input-value"/>
+    <button style="cursor: pointer;" onclick="byteSize()">Get Size</button>
+    <h1 id="result"></h1>
+    <script>
+        function byteSize(){
+            // defined str variable to store the value from input field 
+          const str = document.getElementById("input-value").value;
+        // Create a Blob with the string content and specify the MIME type as plain text
+         const blobObject = new Blob([str], {type : 'text/plain'});
+           // Get the size of the Blob in bytes
+          const sizeInBytes = blobObject.size;
+        //   shoing size in element with the id result
+          document.getElementById('result').innerHTML = `The size of the string is : ${sizeInBytes}`;
+        }
+    </script>
+
+</body>
+</html>
